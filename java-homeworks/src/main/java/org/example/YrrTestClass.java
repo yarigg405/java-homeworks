@@ -7,14 +7,13 @@ public class YrrTestClass {
             testMethod(testString);
         } catch (YrrTestException e) {
             System.out.println(e);
-
         }
     }
 
     private void testMethod(String testString) throws YrrTestException {
-        if (testString.equals("Yrr"))
+        if (testString.equals("Yrr")) {
             throw new YrrTestException("Yrr is that string");
-
+        }
         System.out.println(testString);
     }
 }
