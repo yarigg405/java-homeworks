@@ -1,29 +1,32 @@
 package org.example;
 
 
+import java.util.Comparator;
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        var myList = new MyArrayList<Integer>();
 
-        myList.add(1);
-        myList.add(6);
-        myList.add(8);
-        myList.add(2);
-        myList.add(14);
-        myList.add(10);
-        myList.add(1);
-        myList.add(11);
-        myList.add(12);
-        myList.add(9);
-        myList.add(4);
-        myList.add(15);
-        myList.add(7);
-        myList.add(7);
+        var list = new MyLinkedList<String>();
 
-        System.out.println(myList);
-        System.out.println("\n\n\n");
+        list.add("Thomas");
+        list.add("Gerbert");
+        list.add("Fiffy");
+        list.add("Veronique");
+        list.add("Gabby");
+        list.add("Henderson");
+        list.add("Brian");
+        list.add("Wans");
+        list.add(1, "Valentine");
 
-        myList.sort();
-        System.out.println(myList);
+        list.remove(4);
+        list.set(3, "Michael");
+
+        for (var name : list) {
+            System.out.println(name);
+        }
+
+        list.sort(Comparator.naturalOrder());
+        System.out.println(list);
     }
 }
