@@ -7,10 +7,16 @@ public class MyArrayList<T> {
     private T[] elements;
     private int size;
 
+    private final int defaultSize = 10;
+
     private Comparator<T> comparator;
 
     public MyArrayList() {
-        elements = getNewEmptyArray(10);
+        elements = getNewEmptyArray(defaultSize);
+    }
+
+    public MyArrayList(int initSize) {
+        elements = getNewEmptyArray(initSize);
     }
 
     public MyArrayList(Comparator<T> comparator) {
