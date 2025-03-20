@@ -10,10 +10,11 @@ public class MyArrayList<T> {
     private Comparator<T> comparator;
 
     public MyArrayList() {
-        elements = getNewEmptyArray(0);
+        elements = getNewEmptyArray(10);
     }
 
     public MyArrayList(Comparator<T> comparator) {
+        this();
         this.comparator = comparator;
     }
 
@@ -113,6 +114,12 @@ public class MyArrayList<T> {
         size = 0;
     }
 
+    /**
+     * Return amount of stored elements
+     */
+    public int size() {
+        return size;
+    }
 
     /**
      * Sort collection by merge-sort algorithm
@@ -208,7 +215,7 @@ public class MyArrayList<T> {
     }
 
     private void expand() {
-        var newSize = elements.length + 1;
+        var newSize = (int) (elements.length * 1.5f);
         elements = Arrays.copyOf(elements, newSize);
     }
 }
