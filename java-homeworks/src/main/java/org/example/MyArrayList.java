@@ -41,13 +41,12 @@ public class MyArrayList<T> {
      * @param element Element for adding
      */
     public void add(int index, T element) {
-        if (elements.length >= index)
-            expand();
-
+        if (index > size || index < 0) {
+            throw new IndexOutOfBoundsException("Out of bounds: " + index);
+        }
         System.arraycopy(elements, index,
                 elements, index + 1,
                 size - index);
-
         elements[index] = element;
         size++;
     }
@@ -87,7 +86,7 @@ public class MyArrayList<T> {
      * @param element Removable element
      */
     public void remove(T element) {
-        var index = indexOf(element);
+        int index = indexOf(element);
         if (index == -1) return;
 
         remove(index);

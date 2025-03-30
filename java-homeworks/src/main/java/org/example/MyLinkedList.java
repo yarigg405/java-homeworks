@@ -1,6 +1,11 @@
 package org.example;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Collection;
+import java.util.ListIterator;
+import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 public class MyLinkedList<T> implements List<T> {
 
@@ -284,7 +289,7 @@ public class MyLinkedList<T> implements List<T> {
             return result;
         } catch (CloneNotSupportedException e) {
             System.out.println(e.getMessage());
-            return new MyLinkedList<T>();
+            return new MyLinkedList<>();
         }
     }
 
